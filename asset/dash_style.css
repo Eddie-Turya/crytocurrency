@@ -232,141 +232,162 @@ header h1 {
     color: #1abc9c;
 }
 
-
-/* Default styles for larger screens (desktop) */
-.sidebar {
-    width: 250px;
-    transition: width 0.3s;
-}
-
-.sidebar.collapsed {
-    width: 70px;
-}
-
-.content {
-    margin-left: 250px;
-    transition: margin-left 0.3s;
-}
-
-.sidebar.collapsed + .content {
-    margin-left: 70px;
-}
-
-.currency-container {
-    display: flex;
-    justify-content: space-between;
-}
-
-.currency-card, .community-card, .trade-card {
-    flex: 1;
-    margin: 10px;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-}
-
-.currency-table table {
-    width: 100%;
-    margin: 20px 0;
-}
-
-.bottom-nav {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
-    background-color: #333;
-}
-* Media query for tablets (768px to 1024px) */
-@media only screen and (max-width: 1024px) {
-    .content {
-        margin-left: 200px;
-    }
-
-    .sidebar {
-        width: 200px;
-    }
-
-    .currency-container {
-        flex-wrap: wrap;
-    }
-
-    .currency-card, .community-card, .trade-card {
-        flex: 1 1 48%;
-    }
-
-    .currency-table table {
-        font-size: 14px;
-    }
-
-    .user-profile {
-        display: flex;
-        justify-content: space-between;
-    }
-}
-
-/* Media query for smaller screens (mobile phones, max 768px) */
-@media only screen and (max-width: 768px) {
-    .sidebar {
-        width: 100px;
-        font-size: 12px;
-    }
-
-    .content {
-        margin-left: 100px;
-    }
-
-    .currency-container {
-        display: block;
-    }
-
-    .currency-card, .community-card, .trade-card {
-        flex: 1;
-        margin: 5px 0;
-    }
-
-    header h1 {
-        font-size: 24px;
-    }
-user-profile {
-        display: flex;
+/* Dashboard Styles */
+@media screen and (min-width: 800px) {
+    .nav {
+        position: relative;
+        width: auto;
+        background-color: transparent;
+        flex-direction: row;
         justify-content: center;
         align-items: center;
-        font-size: 14px;
+        margin-right: 5%;
     }
 
-    .currency-table table {
-        font-size: 12px;
+    .nav-link {
+        margin-right: 2em;
     }
 
-    .bottom-nav a {
-        font-size: 16px;
-    }
-
-    .sidebar.collapsed + .content {
-        margin-left: 100px;
+    .navLogo, #barContainer, .sociallinkContainer {
+        display: none;
     }
 }
 
-/* Media query for extra-small screens (mobile phones, max 480px) */
-@media only screen and (max-width: 480px) {
+/* Main Dashboard Elements */
+.dashboard-title {
+    color: var(--primary-color);
+    font-size: 2rem;
+}
+
+.dashboard-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.dashboard-card {
+    background-color: var(--lightgrey);
+    border-radius: 10px;
+    padding: 1em;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+@media screen and (min-width: 800px) {
+    .dashboard-cards {
+        flex-wrap: nowrap;
+    }
+
+    .dashboard-card {
+        width: calc(100% / 3 - 20px);
+        margin-bottom: 0;
+    }
+}
+
+/* Sidebar */
+.sidebar {
+    display: none;
+}
+
+@media screen and (min-width: 800px) {
     .sidebar {
-        width: 80px;
-        font-size: 10px;
+        display: block;
+        position: fixed;
+        width: 250px;
+        top: 0;
+        left: 0;
+        height: 100%;
+        background-color: var(--darkblue);
+        padding: 2em;
     }
 
-    .content {
-        margin-left: 80px;
+    .sidebar a {
+        color: var(--white);
+        padding: 1em;
+        text-transform: uppercase;
+        display: block;
+        text-align: left;
+        margin-bottom: 1.5em;
+        transition: background 0.3s ease;
     }
 
-    .currency-card, .community-card, .trade-card {
-        margin: 5px 0;
+    .sidebar a:hover {
+        background-color: var(--lightgrey);
+        color: var(--darkblue);
+    }
+}
+
+/* Main Content */
+.main-content {
+    margin-top: 2em;
+    padding: 1em;
+}
+
+@media screen and (min-width: 800px) {
+    .main-content {
+        margin-left: 270px;
+        padding: 2em;
+    }
+}
+
+/* Footer */
+.footer {
+    background-color: var(--darkblue);
+    padding: 2em 1em;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.footer-link {
+    color: var(--white);
+    margin-bottom: 1em;
+}
+
+@media screen and (min-width: 800px) {
+    .footer-links {
+        flex-wrap: nowrap;
     }
 
-    .currency-table table {
-        font-size: 10px;
+    .footer-link {
+        margin-bottom: 0;
     }
+}
 
-    .bottom-nav a {
-        font-size: 14px;
+/* Custom Responsive Carousel for Dashboard */
+.carousel-container {
+    display: grid;
+    gap: 10px;
+    grid-auto-flow: column;
+    grid-auto-columns: 100%;
+    overflow: hidden;
+    border-radius: 20px;
+    scroll-behavior: smooth;
+}
+
+.carousel-item {
+    background-color: var(--lightgrey);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1em;
+    border-radius: 20px;
+    width: 100%;
+    height: 300px;
+}
+
+@media screen and (min-width: 700px) {
+    .carousel-container {
+        grid-auto-columns: calc(100% / 2);
+    }
+}
+
+@media screen and (min-width: 1100px) {
+    .carousel-container {
+        grid-auto-columns: calc(100% / 3);
     }
 }
