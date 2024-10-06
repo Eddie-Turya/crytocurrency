@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Trading Dashboard</title>
+    <link rel="stylesheet" href="asset/dash_style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <button class="toggle-btn" id="toggle-btn">
+            <i class="fas fa-bars"></i>
+        </button>
+        <ul class="menu">
+            <li><a href="#"><i class="fas fa-coins"></i><span> DEFI Mining</span></a></li>
+            <li><a href="#"><i class="fas fa-user"></i><span> Profile</span></a></li>
+            <li><a href="#"><i class="fas fa-language"></i><span> Change Language</span></a></li>
+            <li><a href="#"><i class="fas fa-key"></i><span> Change Password</span></a></li>
+            <li><a href="#"><i class="fas fa-file-contract"></i><span> Second Contract</span></a></li>
+            <li><a href="#"><i class="fas fa-dumbbell"></i><span> Live Exercise</span></a></li>
+            <li><a href="#"><i class="fas fa-money-bill-wave"></i><span> Fast Withdraw</span></a></li>
+            <li><a href="#"><i class="fas fa-globe"></i><span> Online Services</span></a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <main class="content">
+        <header>
+            <h1>Crypto Trading Dashboard</h1>
+            <div class="user-profile">
+                <img src="img/profile.png" alt="User Icon">
+                <span class="username">Edwin Turya</span>
+            </div>
+        </header>
+
+        <!-- Currency Section -->
+        <div class="currency-container">
+            <section class="currency-section">
+                <div class="currency-card">
+                    <h3>BTC/USDT</h3>
+                    <p class="price">$62,679.99</p>
+                    <p class="change positive">+1.17%</p>
+                </div>
+                <div class="currency-card">
+                    <h3>ETH/USDT</h3>
+                    <p class="price">$2,444.98</p>
+                    <p class="change positive">+1.74%</p>
+                </div>
+            </section>
+
+            <!-- Additional Cards Section -->
+            <section class="additional-cards">
+                <div class="community-card">
+                    <h3>Community</h3>
+                    <p>Invite Friends</p>
+                    <i class="fas fa-user-friends"></i>
+                </div>
+                <div class="trade-card">
+                    <h3>Trade</h3>
+                    <p>View Trade Graph</p>
+                    <i class="fas fa-chart-line"></i>
+                </div>
+            </section>
+        </div>
+
+        <!-- Currency Table Section -->
+        <section class="currency-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Coin</th>
+                        <th>Latest Price</th>
+                        <th>Quote Change</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><i class="fab fa-bitcoin"></i> BTC/USDT</td>
+                        <td>$62,679.99</td>
+                        <td class="positive">+1.17%</td>
+                    </tr>
+                    <tr>
+                        <td><i class="fab fa-ethereum"></i> ETH/USDT</td>
+                        <td>$2,444.98</td>
+                        <td class="positive">+1.74%</td>
+                    </tr>
+                    <tr>
+                        <td><i class="fab fa-xrp"></i> XRP/USDT</td>
+                        <td>$1.19</td>
+                        <td class="positive">+0.98%</td>
+                    </tr>
+                    <tr>
+                        <td><i class="fas fa-coins"></i> BNB/USDT</td>
+                        <td>$323.45</td>
+                        <td class="positive">+0.65%</td>
+                    </tr>
+                    <tr>
+                        <td><i class="fas fa-coins"></i> MATIC/USDT</td>
+                        <td>$1.45</td>
+                        <td class="positive">+0.55%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Bottom Navigation -->
+        <nav class="bottom-nav">
+            <a href="#"><i class="fas fa-home"></i></a>
+            <a href="#"><i class="fas fa-chart-bar"></i></a>
+            <a href="#"><i class="fas fa-exchange-alt"></i></a>
+            <a href="#"><i class="fas fa-wallet"></i></a>
+        </nav>
+    </main>
+
+    <script>
+        // Toggle Sidebar
+        const toggleBtn = document.getElementById('toggle-btn');
+        const sidebar = document.getElementById('sidebar');
+        
+        toggleBtn.addEventListener('click', () => {
+            sidebar.classList.toggle('collapsed');
+        });
+    </script>
+</body>
+</html>

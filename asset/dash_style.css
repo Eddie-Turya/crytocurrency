@@ -1,0 +1,263 @@
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f4f7fa;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: 250px;
+    background-color: #2c3e50;  /* Darker blue */
+    color: #ecf0f1;
+    position: fixed;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    transition: width 0.3s;
+}
+
+.sidebar.collapsed {
+    width: 70px;
+}
+
+.menu {
+    list-style-type: none;
+    padding: 0;
+}
+
+.menu li {
+    margin-bottom: 25px;
+}
+
+.menu li a {
+    display: flex;
+    align-items: center;
+    color: #ecf0f1;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.menu li i {
+    margin-right: 10px;
+    font-size: 1.5rem;
+}
+
+/* Styles for collapsed sidebar */
+.sidebar.collapsed .menu li a {
+    justify-content: center;
+}
+
+.sidebar.collapsed .menu li a span {
+    display: none;
+}
+
+.sidebar.collapsed .menu li a i {
+    color: gold;
+}
+
+.menu li a:hover {
+    color: #1abc9c;  /* Light green hover effect */
+}
+
+/* Main Content Styles */
+.content {
+    margin-left: 250px;
+    padding: 20px;
+    transition: margin-left 0.3s;
+}
+
+.sidebar.collapsed + .content {
+    margin-left: 70px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 2rem;
+    color: #34495e;
+}
+
+/* User Profile Styles */
+.user-profile {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.user-profile img {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.user-profile .username {
+    font-size: 1.2rem;
+    color: #34495e;
+}
+
+/* Currency Cards Section */
+.currency-container {
+    display: flex;
+    justify-content: center; /* Center the currency cards section */
+    margin: 30px 0;
+    gap: 20px; /* Space between currency cards */
+}
+
+.currency-section {
+    display: flex;
+    flex-direction: column; /* Stack currency cards */
+    width: 30%; /* Adjust width for the left side */
+}
+
+.currency-card {
+    background-color: #ffffff;
+    padding: 15px; /* Reduced padding for a smaller look */
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 20px; /* Increased space between cards */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+    height: 150px; /* Fixed height for uniformity */
+}
+
+.currency-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Slightly increased shadow on hover */
+}
+
+/* Ensuring uniform size for all cards */
+.currency-card .price {
+    font-size: 1.6rem;
+    color: #34495e;
+}
+
+.currency-card .change {
+    font-size: 1rem;
+}
+
+.positive {
+    color: #27ae60;
+}
+
+.negative {
+    color: #e74c3c;
+}
+
+/* Additional Cards Section */
+.additional-cards {
+    display: flex;
+    flex-direction: column; /* Stack additional cards */
+    width: 30%; /* Adjust width for the right side */
+}
+
+.community-card,
+.trade-card {
+    background-color: #ffffff;
+    padding: 15px; /* Reduced padding for a smaller look */
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 20px; /* Increased space between additional cards */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+    height: 150px; /* Fixed height for uniformity */
+}
+
+.community-card:hover,
+.trade-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Slightly increased shadow on hover */
+}
+
+/* Currency Table Section */
+.currency-table {
+    display: flex;
+    justify-content: center; /* Center the table */
+    margin: 30px 0;
+}
+
+.currency-table table {
+    width: 50%; /* Narrower table */
+    border-collapse: collapse;
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.currency-table th,
+.currency-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #dddddd;
+}
+
+.currency-table th {
+    background-color: #2c3e50;
+    color: white;
+}
+
+.currency-table tr:hover {
+    background-color: #f1f1f1; /* Row hover effect */
+}
+
+/* Bottom Navigation Styles */
+.bottom-nav {
+    display: flex;
+    justify-content: space-around;
+    background-color: #2c3e50;
+    padding: 15px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.bottom-nav a {
+    color: white;
+    font-size: 1.5rem;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.bottom-nav a:hover {
+    color: #1abc9c;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .currency-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .currency-card {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+
+    .sidebar {
+        width: 70px; /* Collapsed width */
+    }
+
+    .sidebar.collapsed + .content {
+        margin-left: 70px; /* Adjusted for collapsed */
+    }
+
+    .currency-table table {
+        width: 90%; /* Adjust width for smaller screens */
+    }
+
+    .currency-container {
+        flex-direction: column; /* Stack cards vertically on smaller screens */
+        align-items: center; /* Center cards on smaller screens */
+    }
+}
