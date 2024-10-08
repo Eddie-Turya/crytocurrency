@@ -1,0 +1,228 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+header {
+    background-color: #2b2b2b;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+}
+
+p#datetime {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #b0b0b0;
+}
+
+/* Market Overview Section */
+.market-overview {
+    padding: 20px;
+    margin-left: 250px; /* Space for the sidebar */
+    transition: margin-left 0.3s ease;
+}
+
+.sidebar.collapsed ~ .market-overview {
+    margin-left: 80px; /* Adjust margin when sidebar is collapsed */
+}
+
+/* Basic styling for the sidebar */
+.sidebar {
+    width: 250px; /* Width when open */
+    transition: width 0.3s ease; /* Smooth transition */
+    overflow: hidden; /* Prevent overflow when collapsed */
+    background-color: #333; /* Background color */
+    color: white; /* Text color */
+    position: fixed; /* Fixed position on the left */
+    height: 100%; /* Full height */
+    z-index: 1000; /* Ensure it stays on top */
+}
+
+/* Collapsed sidebar styles */
+.sidebar.collapsed {
+    width: 80px; /* Width when collapsed */
+}
+.sidebar.collapsed .menu li a {
+    justify-content: center;
+}
+
+.sidebar.collapsed .menu li a span {
+    display: none;
+}
+
+.sidebar.collapsed .menu li a i {
+    color: gold;
+}
+
+.menu li a:hover {
+    color: #1abc9c;  /* Light green hover effect */
+}
+
+/* Styling for the menu items */
+.menu {
+    list-style: none; /* Remove bullet points */
+    padding: 0;
+    margin: 60px 0 0 0; /* Add top margin to create space below the toggle button */
+}
+
+.menu li {
+    padding: 15px; /* Padding for each menu item */
+}
+
+.menu li a {
+    color: white; /* Link text color */
+    text-decoration: none; /* Remove underline from links */
+    display: flex; /* Flex layout for icons and text */
+    align-items: center; /* Center align vertically */
+}
+
+.menu li i {
+    margin-right: 10px;
+    font-size: 1.5rem;
+}
+
+.menu li a:focus, .menu li a:hover {
+    background-color: #555; /* Change background on focus/hover */
+    outline: none; /* Remove default outline */
+    border-radius: 5px; /* Ensure rounded corners */
+}
+
+
+/* Change color on hover */
+.menu li a:hover {
+    background-color: #444; /* Highlight background on hover */
+    border-radius: 5px; /* Rounded corners */
+}
+
+/* Toggle button styles */
+.toggle-btn {
+    background: transparent; /* Transparent background */
+    border: none; /* No border */
+    color: white; /* Button text color */
+    font-size: 24px; /* Font size for the icon */
+    cursor: pointer; /* Cursor pointer on hover */
+    position: absolute; /* Position absolute for placement */
+    top: 10px; /* Distance from the top */
+    left: 10px; /* Distance from the left */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 60px; /* Adjust width for smaller screens */
+    }
+
+    .sidebar.collapsed {
+        width: 50px; /* Further reduce when collapsed */
+    }
+
+    .sidebar .menu li {
+        text-align: center; /* Center align text in smaller view */
+    }
+}
+
+/* Market Overview Table Styles */
+.table-container {
+    display: flex;
+    justify-content: center; /* Center the table container */
+}
+
+.market-overview table {
+    width: 80%;
+    max-width: 1200px; /* Maximum width for the table */
+    border-collapse: collapse; /* Collapse borders */
+    margin: 0 auto; /* Center the table */
+    text-align: center;
+}
+
+.market-overview th,
+.market-overview td {
+    padding: 10px; /* Padding for table cells */
+    text-align: left; /* Align text to the left */
+    border-bottom: 1px solid #ddd; /* Bottom border for cells */
+}
+
+.market-overview th {
+    background-color: #2b2b2b; /* Header background */
+    color: white; /* Header text color */
+}
+
+.market-overview td {
+    background-color: white; /* Table data background */
+}
+
+/* Responsive Design for Table */
+@media screen and (max-width: 768px) {
+    .market-overview table {
+        font-size: 12px; /* Smaller font size */
+        width: 95%; /* Adjust table width */
+    }
+
+    .market-overview td img {
+        width: 20px; /* Smaller logo for mobile */
+        height: 20px; /* Smaller logo for mobile */
+    }
+}
+
+/* Bottom Navigation */
+.bottom-nav {
+    display: flex;
+    justify-content: space-around;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333; /* Bottom nav background */
+    padding: 10px 0; /* Padding */
+}
+
+.bottom-nav a {
+    color: white; /* Link color */
+    font-size: 24px; /* Font size for links */
+}
+
+/* Coin name and logo alignment */
+td.coin {
+    display: flex; /* Flex for coin name and logo */
+    align-items: center; /* Center align items */
+}
+
+td.coin img {
+    margin-right: 10px; /* Space between logo and name */
+}
+
+/* Positive/Negative change styling */
+.positive {
+    color: green; /* Positive change color */
+}
+
+.negative {
+    color: red; /* Negative change color */
+}
+
+/* Chart Section */
+.chart-section {
+    display: flex; /* Use flexbox for centering */
+    flex-direction: column; /* Stack header and chart vertically */
+    align-items: center; /* Center align items */
+    margin: 20px 0; /* Optional: Add some vertical spacing */
+}
+
+.chart-header {
+    text-align: center; /* Center the header text */
+    margin-bottom: 10px; /* Space between header and chart */
+}
+
+.tradingview-widget-container {
+    width: 100%; /* Set to 100% for responsive width */
+    max-width: 800px; /* Set a maximum width for the graph */
+    height: 500px; /* Set height for the chart */
+}
