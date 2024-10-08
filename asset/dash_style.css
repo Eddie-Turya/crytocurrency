@@ -232,76 +232,32 @@ header h1 {
     color: #1abc9c;
 }
 
-/* Dashboard Styles */
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
+/* Responsive Design */
+@media (max-width: 768px) {
+    .currency-section {
+        flex-direction: column;
+        align-items: center;
+    }
 
-.footer-link {
-    color: var(--white);
-    margin-bottom: 1em;
-}
+    .currency-card {
+        width: 90%;
+        margin-bottom: 20px;
+    }
 
-/* Base Styles for Mobile (default) */
-body, html {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-}
-
-.container {
-    padding: 1em;
-}
-
-.sidebar {
-    display: none; /* Hidden by default on mobile */
-}
-
-.header {
-    text-align: center;
-}
-
-.dashboard-content {
-    padding: 1em;
-    margin: 1em 0;
-}
-
-/* Medium Devices (Tablets and Up) */
-@media screen and (min-width: 600px) {
     .sidebar {
-        display: block;
-        width: 250px;
-        position: fixed;
-        top: 0;
-        left: 0;
-        height: 100%;
-        background-color: #333;
-        color: #fff;
-        padding: 20px;
+        width: 70px; /* Collapsed width */
     }
 
-    .dashboard-content {
-        margin-left: 270px; /* Adjusted for sidebar */
+    .sidebar.collapsed + .content {
+        margin-left: 70px; /* Adjusted for collapsed */
     }
 
-    .header {
-        text-align: left;
-    }
-}
-
-/* Large Devices (Laptops and Desktops) */
-@media screen and (min-width: 1024px) {
-    .sidebar {
-        width: 300px;
-        padding: 30px;
+    .currency-table table {
+        width: 90%; /* Adjust width for smaller screens */
     }
 
-    .dashboard-content {
-        margin-left: 320px;
-        padding: 2em;
-    }
-
-    .header {
-        font-size: 2rem;
+    .currency-container {
+        flex-direction: column; /* Stack cards vertically on smaller screens */
+        align-items: center; /* Center cards on smaller screens */
     }
 }
