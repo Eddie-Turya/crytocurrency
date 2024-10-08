@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tradelot AI - Market Overview</title>
+    <link rel="stylesheet" href="asset/market_style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+</head>
+<body>
+    
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <button class="toggle-btn" id="toggle-btn">
+            <i class="fas fa-bars"></i>
+        </button>
+        <ul class="menu">
+            <li><a href="#"><i class="fas fa-coins"></i><span> DEFI Mining</span></a></li>
+            <li><a href="#"><i class="fas fa-user"></i><span> Profile</span></a></li>
+            <li><a href="#"><i class="fas fa-language"></i><span> Change Language</span></a></li>
+            <li><a href="#"><i class="fas fa-key"></i><span> Change Password</span></a></li>
+            <li><a href="#"><i class="fas fa-file-contract"></i><span> Second Contract</span></a></li>
+            <li><a href="#"><i class="fas fa-dumbbell"></i><span> Live Exercise</span></a></li>
+            <li><a href="#"><i class="fas fa-money-bill-wave"></i><span> Fast Withdraw</span></a></li>
+            <li><a href="#"><i class="fas fa-globe"></i><span> Online Services</span></a></li>
+        </ul>
+    </div>
+
+    <header>
+        <h1>Live Market Overview</h1>
+        <p id="datetime"></p>
+    </header>
+
+    <section class="chart-section">
+        <h2 class="chart-header">Trading Chart (BTC/USDT)</h2>
+        <div class="tradingview-widget-container">
+            <div id="tradingview_chart"></div>
+        </div>
+    </section>
+    
+
+    <section class="market-overview">
+        <h2>Top 24 Cryptocurrencies</h2>
+        <div class="table-container">
+            <table id="market-table">
+                <thead>
+                    <tr>
+                        <th>Coin</th>
+                        <th>Latest Price</th>
+                        <th>24h Change</th>
+                        <th>Volume (24h)</th>
+                    </tr>
+                </thead>
+                <tbody id="coin-data">
+                    <!-- Coin data will be inserted here dynamically -->
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+        <a href="#"><i class="fas fa-home"></i></a>
+        <a href="market.html"><i class="fas fa-chart-bar"></i></a>
+        <a href="#"><i class="fas fa-exchange-alt"></i></a>
+        <a href="#"><i class="fas fa-wallet"></i></a>
+    </nav>
+
+    <script>
+        // Toggle Sidebar
+        const toggleBtn = document.getElementById('toggle-btn');
+        const sidebar = document.getElementById('sidebar');
+        
+        toggleBtn.addEventListener('click', () => {
+            sidebar.classList.toggle('collapsed');
+        });
+
+        // Chart Placeholder
+        const chartContainer = document.getElementById('tradingview_chart');
+        const chart = document.createElement('img'); // Placeholder for the real chart
+        chart.src = 'https://www.tradingview.com/x/placeholder-image'; // Replace with actual chart
+        chart.style.width = '100%';
+        chart.style.height = '300px'; // Reduced size
+        chartContainer.appendChild(chart);
+    </script>
+    <script type="text/javascript">
+        new TradingView.widget({
+            "width": 800,
+            "height": 500,
+            "symbol": "BINANCE:BTCUSDT",
+            "interval": "D",
+            "timezone": "Etc/UTC",
+            "theme": "light",
+            "style": "1",
+            "locale": "en",
+            "toolbar_bg": "#f1f3f6",
+            "enable_publishing": false,
+            "allow_symbol_change": true,
+            "container_id": "tradingview_chart"
+        });
+    </script>
+
+    <script src="asset/market_scr.js"></script>
+    
+</body>
+</html>
